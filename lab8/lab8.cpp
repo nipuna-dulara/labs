@@ -1,5 +1,6 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
+#include <vector>
 using namespace std;
 
 // function to heapify the tree
@@ -52,8 +53,23 @@ void displayArray(int arr[], int n)
 // main program
 int main()
 {
-    int heap_arr[] = {4, 17, 3, 12, 9, 6};
-    int n = sizeof(heap_arr) / sizeof(heap_arr[0]);
+    vector<int> arr;
+    int ele;
+    cin >> ele;
+    while (getchar() != '\n')
+    {
+        arr.push_back(ele);
+        cin >> ele;
+    }
+    arr.push_back(ele);
+
+    int n = arr.size();
+    int heap_arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        heap_arr[i] = arr[i];
+    }
+
     cout << "Input array" << endl;
     displayArray(heap_arr, n);
 
